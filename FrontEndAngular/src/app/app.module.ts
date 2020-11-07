@@ -7,7 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
+    SobrenosComponent,
     LoginComponent
   ],
   imports: [
