@@ -28,6 +28,7 @@ export class AuthService {
     if (tokenUsuarioLogin != null) {
       ok = true
     }
+    return ok
   }
 
   btnLogin() {
