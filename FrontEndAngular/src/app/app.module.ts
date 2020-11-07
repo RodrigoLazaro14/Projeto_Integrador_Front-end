@@ -8,6 +8,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    SobrenosComponent
+    SobrenosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

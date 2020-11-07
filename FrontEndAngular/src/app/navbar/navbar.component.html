@@ -25,10 +25,17 @@
 
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
+                    <div *ngIf='auth.btnLogin()'>
+                      <button class="btn btn-outline-primary form-control mr-sm-2" type="submit">Entrar</button>
+                    </div>
 
-                    <button class="btn btn-outline-primary form-control mr-sm-2" type="submit">Entrar</button>
-                    <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit">Cadastre-se</button>
+                    <div *ngIf='auth.btnLogin()'>
+                      <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit">Cadastre-se</button>
+                    </div>
 
+                    <div *ngIf='auth.btnSair()'>
+                      <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" (click)='sair()'>Sair</button>
+                    </div>             
                 </form>
             </div>
         </nav>
