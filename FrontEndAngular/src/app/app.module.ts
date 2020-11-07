@@ -21,7 +21,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    SobrenosComponent
   ],
   imports: [
     BrowserModule,
