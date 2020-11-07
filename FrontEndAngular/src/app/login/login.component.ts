@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -20,12 +21,10 @@ export class LoginComponent implements OnInit {
   }
 
   entrar() {
-    this.authService.logar(this.userLogin).subscribe((resp: UserLogin)=> {
+    this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp
-      localStorage.setItem('token', this.userLogin.token)
-      this.router.navigate(['/home']) //como a gente não tem feed, eu coloquei pra ir pra home
+      localStorage.setItem('tokenUsuarioLogin', this.userLogin.tokenUsuarioLogin)
+      this.router.navigate(['/home'])
     })
   }
-
-
 }
