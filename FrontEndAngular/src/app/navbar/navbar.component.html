@@ -31,9 +31,11 @@
                         </div>
 
                         <div *ngIf='auth.btnLogin()'>
-                        <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit"          routerLink='/cadastrar'>Cadastre-se</button>
+                        <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit"  routerLink='/cadastrar'>Cadastre-se</button>
                         </div>  
-
+                        <div>
+                        <button class="btn btn-outline-primary my-2 my-sm-0 m-2" type="submit" routerLink='/cadastroHospital'>Cadastro Hospital</button>
+                        </div>
                         <div *ngIf='auth.btnSair()'>
                         <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" (click)='sair()'>Sair</button>
                         </div>             
