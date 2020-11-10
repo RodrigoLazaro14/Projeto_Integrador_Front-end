@@ -7,18 +7,22 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #4c5eaf;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px rgba(73, 48, 90, 0.644);
 }
 
 .button:hover {
-    background-color: #3e8e41
+    background-color: #5d4db9b4
 }
 
 .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    background-color: #4c26b6b6;
+    box-shadow: 0 5px rgb(25, 83, 170);
     transform: translateY(4px);
+}
+
+.mb-50 {
+    margin-top: (spacer * .25rem) !important;
 }
