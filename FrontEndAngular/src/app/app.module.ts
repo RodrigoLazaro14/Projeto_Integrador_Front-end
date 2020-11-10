@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     FooterComponent,
     LoginComponent,
     CadastroComponent,
-    SobrenosComponent
+    SobrenosComponent,
+    DirecionamentoComponent
   ],
   imports: [
     BrowserModule,
