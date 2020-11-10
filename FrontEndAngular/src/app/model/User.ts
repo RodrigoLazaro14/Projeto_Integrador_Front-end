@@ -4,6 +4,6 @@ export class User {
 	public  nomeUsuarioModel: string ;
 	public  loginUsuarioModel: string ;
 	public  senhaUsuarioModel: string ;
+	public tipoPessoa: number;
 	
-
 }

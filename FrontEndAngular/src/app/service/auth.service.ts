@@ -8,6 +8,8 @@ import { User } from '../model/User';
 })
 export class AuthService {
 
+  userLogin: UserLogin = new UserLogin()
+
   constructor(private http: HttpClient) { }
 
   logar(userLogin: UserLogin) {
@@ -15,11 +17,12 @@ export class AuthService {
   }
   
   cadastrar(user:User){
-  
     return this.http.post('http://localhost:8080/usuarios/cadastrar',user)
   }
   
-
+  logarHospital(hospitalLogin: UserLogin) {
+    return this.http.post('http://localhost:8080/hospitais/logar', hospitalLogin)
+  }
 
   btnSair() {
     let ok = false
@@ -40,6 +43,24 @@ export class AuthService {
   }
 
   return ok
+  }
+ 
+  fisica() {
+    let ok = false
+    let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
+    if(this.userLogin.tipoPessoa == 1 && tokenUsuarioLogin != null){
+      ok = true
+    } 
+    return ok
+  }
+
+  juridica() {
+    let ok = false
+    let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
+    if(this.userLogin.tipoPessoa == 2 && tokenUsuarioLogin != null){
+      ok = true
+    } 
+    return ok
   }
 
 }
