@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-
+import { Router } from '@angular/router';
+import { UserLogin } from '../model/UserLogin';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-direcionamento',
@@ -9,12 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirecionamentoComponent implements OnInit {
 
-  
+  userLogin: UserLogin = new UserLogin()
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-
+  entrar() {
+    this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
+      this.userLogin = resp
+      localStorage.setItem('tokenUsuarioLogin', this.userLogin.tokenUsuarioLogin)
+      this.router.navigate(['/home'])
+    })
+  }
 }
