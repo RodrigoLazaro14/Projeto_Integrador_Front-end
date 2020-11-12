@@ -7,6 +7,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadastroHospitalComponent } from './cadastro-hospital/cadastro-hospital.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
+import { EntrarComponent } from './entrar/entrar.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'cadastrar', component:CadastroComponent },
   {path:'cadastroHospital', component:CadastroHospitalComponent},
   {path:'especialidades', component:EspecialidadesComponent},
+  {path: 'entrar', component: EntrarComponent}
 
 ];
 
