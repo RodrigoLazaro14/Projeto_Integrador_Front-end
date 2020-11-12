@@ -47,6 +47,13 @@
                             <button class="btn btn-outline-primary form-control mr-sm-2" type="submit" routerLink='/logar'>Entrar</button>
                         </div>
 
+                        <div *ngIf='auth.btnLogin()'>
+                        <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit"  routerLink='/cadastrar'>Cadastre-se</button>
+                        </div>  
+                        <div>
+                        <button class="btn btn-outline-primary my-2 my-sm-0 m-2" type="submit" routerLink='/cadastroHospital'>Cadastro Hospital</button>
+                        </div>
+
                         <li class="nav dropdown">
                             <div *ngIf='auth.btnLogin()'>
                                 <a class="nav-link dropdown-toggle btn btn-outline-primary" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
@@ -58,6 +65,7 @@
                                 </div>
                             </div>
                         </li>
+
                         <div *ngIf='auth.btnSair()'>
                             <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit" (click)='sair()'>Sair</button>
                         </div>
