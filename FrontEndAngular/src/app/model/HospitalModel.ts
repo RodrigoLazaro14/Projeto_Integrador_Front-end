@@ -5,6 +5,7 @@ export class HospitalModel {
     public nomeHospital: string
     public enderecoHospital: string
     public codigoHospital: string
+    public tipoPessoa: number
     public loginHospital: string
     public senhaHospital: string
     public categoria: CategoriaModel[]

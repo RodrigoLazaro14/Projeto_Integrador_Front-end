@@ -7,6 +7,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 
+
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
   {path:'home', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'cadastrar', component:CadastroComponent },
   {path:'especialidades', component:EspecialidadesComponent},
   {path: 'direcionamento', component:DirecionamentoComponent}
+
 ];
 
 @NgModule({
