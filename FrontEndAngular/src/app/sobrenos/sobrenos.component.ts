@@ -13,6 +13,7 @@ export class SobrenosComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    window.scroll(0,0)
   }
 
 }

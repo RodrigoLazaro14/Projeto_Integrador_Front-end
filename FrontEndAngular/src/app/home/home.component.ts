@@ -12,7 +12,8 @@ export class HomeComponent implements OnInit {
     public usuarioService: AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    window.scroll(0,0)
   }
 
 }
