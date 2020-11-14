@@ -19,6 +19,7 @@ import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-f
 import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
+import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
   import { from } from 'rxjs';
 
@@ -38,6 +39,7 @@ import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospit
     PoliticaPrivacidadeComponent,
     EntrarComponent,
     ListaHospitaisComponent,
+    LoginHospitalComponent,
     PesquisaHospitaisComponent
   ],
   imports: [

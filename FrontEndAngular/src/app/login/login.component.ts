@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
 
   userLogin: UserLogin = new UserLogin()
   hospitalLogin: UserLogin = new UserLogin()
-  userHospital: HospitalModel = new HospitalModel()
 
   constructor(
     private authService: AuthService,
@@ -33,15 +32,5 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/home'])
     });
     
-  }
-
-  hospitalEntrar() {
-    this.authService.logarHospital(this.hospitalLogin).subscribe((resp: UserLogin) => {
-      this.hospitalLogin = resp
-      this.authService.userLogin = this.hospitalLogin;
-      localStorage.setItem('tokenUsuarioLogin', this.hospitalLogin.tokenUsuarioLogin)
-      console.log(JSON.stringify(this.hospitalLogin));
-      this.router.navigate(['/home'])
-    })
   }
 }
