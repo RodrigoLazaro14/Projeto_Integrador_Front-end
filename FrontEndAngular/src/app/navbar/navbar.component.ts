@@ -8,7 +8,8 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  
+ 
   constructor(
     public usuarioService: AuthService,
     private router: Router,

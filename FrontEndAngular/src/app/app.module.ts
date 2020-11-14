@@ -16,6 +16,7 @@ import { CadastroHospitalComponent } from './cadastro-hospital/cadastro-hospital
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
 import { EntrarComponent } from './entrar/entrar.component';
+import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EntrarComponent } from './entrar/entrar.component';
     CadastroHospitalComponent,
     DirecionamentoComponent,
     EspecialidadesComponent,
-    EntrarComponent
+    EntrarComponent,
+    ListaHospitaisComponent
   ],
   imports: [
     BrowserModule,
