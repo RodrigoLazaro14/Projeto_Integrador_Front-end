@@ -17,6 +17,8 @@ import { DirecionamentoComponent } from './direcionamento/direcionamento.compone
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
+import { EntrarComponent } from './entrar/entrar.component';
+import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-pr
     DirecionamentoComponent,
     EspecialidadesComponent,
     PerguntasFrequentesComponent,
-    PoliticaPrivacidadeComponent
+    PoliticaPrivacidadeComponent,
+    EntrarComponent,
+    ListaHospitaisComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,8 @@ import { EspecialidadesComponent } from './especialidades/especialidades.compone
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
+import { EntrarComponent } from './entrar/entrar.component';
+import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
@@ -19,8 +21,9 @@ const routes: Routes = [
   {path:'cadastroHospital', component:CadastroHospitalComponent},
   {path:'especialidades', component:EspecialidadesComponent},
   {path:'perguntasFrequentes', component:PerguntasFrequentesComponent},
-  {path:'politicaPrivacidade', component:PoliticaPrivacidadeComponent}
-
+  {path:'politicaPrivacidade', component:PoliticaPrivacidadeComponent},
+  {path: 'entrar', component: EntrarComponent},
+  {path: 'lista-hospitais', component: ListaHospitaisComponent}
 ];
 
 @NgModule({
