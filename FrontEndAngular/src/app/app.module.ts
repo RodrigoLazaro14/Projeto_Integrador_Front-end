@@ -19,6 +19,8 @@ import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-f
 import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
+import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.compo
     PerguntasFrequentesComponent,
     PoliticaPrivacidadeComponent,
     EntrarComponent,
-    ListaHospitaisComponent
+    ListaHospitaisComponent,
+    PesquisaHospitaisComponent
   ],
   imports: [
     BrowserModule,
