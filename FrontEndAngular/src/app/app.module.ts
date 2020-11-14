@@ -11,8 +11,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroHospitalComponent } from './cadastro-hospital/cadastro-hospital.component';
+
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
+import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
+import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
+import { EntrarComponent } from './entrar/entrar.component';
+import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +29,13 @@ import { EspecialidadesComponent } from './especialidades/especialidades.compone
     LoginComponent,
     CadastroComponent,
     SobrenosComponent,
+    CadastroHospitalComponent,
     DirecionamentoComponent,
-    EspecialidadesComponent
+    EspecialidadesComponent,
+    PerguntasFrequentesComponent,
+    PoliticaPrivacidadeComponent,
+    EntrarComponent,
+    ListaHospitaisComponent
   ],
   imports: [
     BrowserModule,
