@@ -15,6 +15,8 @@ import { CadastroHospitalComponent } from './cadastro-hospital/cadastro-hospital
 
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
+import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
+import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 
@@ -30,6 +32,8 @@ import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.compo
     CadastroHospitalComponent,
     DirecionamentoComponent,
     EspecialidadesComponent,
+    PerguntasFrequentesComponent,
+    PoliticaPrivacidadeComponent,
     EntrarComponent,
     ListaHospitaisComponent
   ],

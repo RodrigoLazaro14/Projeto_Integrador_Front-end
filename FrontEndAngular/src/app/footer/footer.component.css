@@ -35,3 +35,9 @@ ul.social-network li {
 .bgFooter{ 
     background:-webkit-linear-gradient(#00d2ff, #0088CC, #3a7bd5) ;
 }
+
+.hr{
+  border-color: white;
+  margin-left: .5em;
+}
+
