@@ -1,8 +1,8 @@
-import {Injectable } from '@angular/core';
-import {HttpClient} from  '@angular/common/http';
-import { UserLogin } from '../model/UserLogin';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { User } from '../model/User';
- 
+import { UserLogin } from '../model/UserLogin';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,52 +15,33 @@ export class AuthService {
   logar(userLogin: UserLogin) {
     return this.http.post('http://localhost:8080/usuarios/logar', userLogin)
   }
-  
-  cadastrar(user:User){
-    return this.http.post('http://localhost:8080/usuarios/cadastrar',user)
-  }
-  
+
   logarHospital(hospitalLogin: UserLogin) {
     return this.http.post('http://localhost:8080/hospitais/logar', hospitalLogin)
   }
 
+  cadastrar(user:User) {
+    return this.http.post('http://localhost:8080/usuarios/cadastrar%27', User)
+  }
+
   btnSair() {
     let ok = false
-    let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
+    let token = localStorage.getItem('token')
 
-    if (tokenUsuarioLogin != null) {
+    if (token != null) {
       ok = true
     }
-    return ok
   }
 
   btnLogin() {
     let ok = false
-    let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
+    let token = localStorage.getItem('token')
 
-    if (tokenUsuarioLogin == null) {
+    if (token == null) {
       ok = true
   }
 
   return ok
-  }
- 
-  fisica() {
-    let ok = false
-    let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
-    if(this.userLogin.tipoPessoa == 1 && tokenUsuarioLogin != null){
-      ok = true
-    } 
-    return ok
-  }
-
-  juridica() {
-    let ok = false
-    let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
-    if(this.userLogin.tipoPessoa == 2 && tokenUsuarioLogin != null){
-      ok = true
-    } 
-    return ok
   }
 
 }
