@@ -20,6 +20,8 @@ import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-pr
 import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
+import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { LoginHospitalComponent } from './login-hospital/login-hospital.componen
     PoliticaPrivacidadeComponent,
     EntrarComponent,
     ListaHospitaisComponent,
-    LoginHospitalComponent
+    LoginHospitalComponent,
+    PesquisaHospitaisComponent
   ],
   imports: [
     BrowserModule,
