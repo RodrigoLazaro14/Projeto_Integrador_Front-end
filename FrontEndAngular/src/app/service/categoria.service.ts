@@ -6,7 +6,7 @@ import { CategoriaModel } from '../model/CategoriaModel';
 @Injectable({
   providedIn: 'root'
 })
-export class PostagemService {
+export class CategoriaService {
   constructor(private http: HttpClient) { }
   token = {
     headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))

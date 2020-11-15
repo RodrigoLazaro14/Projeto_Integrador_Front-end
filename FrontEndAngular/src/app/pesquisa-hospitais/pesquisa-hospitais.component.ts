@@ -7,11 +7,14 @@ import { CategoriaService } from '../service/categoria.service';
 
  
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+  selector: 'app-pesquisa-hospitais',
+  templateUrl: './pesquisa-hospitais.component.html',
+  styleUrls: ['./pesquisa-hospitais.component.css']
 })
-export class FeedComponent implements OnInit {
+export class PesquisaHospitaisComponent implements OnInit {
+  //-------------
+  hospitalLista = [];
+  //-------------
   key = 'data'
   reverse = true
 
@@ -29,6 +32,13 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    //---------------
+    this.hospitalService.listar().subscribe(
+      resp => {
+        this.hospitalLista = resp;
+      }
+    )
+    //---------------
     window.scroll(0,0)
     this.findAllHospitais()
     this.findAllCategorias()

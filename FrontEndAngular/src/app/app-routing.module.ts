@@ -12,6 +12,7 @@ import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-pr
 import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
+import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'perguntasFrequentes', component: PerguntasFrequentesComponent },
   { path: 'politicaPrivacidade', component: PoliticaPrivacidadeComponent },
   { path: 'entrar', component: EntrarComponent },
-  { path: 'lista-hospitais', component: ListaHospitaisComponent }
+  { path: 'lista-hospitais', component: ListaHospitaisComponent },
+  { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent}
 ];
 
 @NgModule({

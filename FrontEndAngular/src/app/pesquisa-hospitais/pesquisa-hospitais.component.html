@@ -1,45 +1,28 @@
-<form>
-
-
-<div class="form-group col-md-4">
-    <label for="inputState">Região:</label>
-    <select id="inputState" class="form-control" [(ngModel)]='enderecoHospital' (change)='findByNomeHospital()'>
-        <option *ngFor='let item of listaEnderecos' value={{item.id}}>{{item.enderecoHospital}} Escolha    </option>
-        </select>
-
+<div class="container-fluid col-md-8">
+  <table class="table table-hover">
+      <thead>
+          <tr>
+              <th scope="col">ID Hospital</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Endereço</th>
+              <th scope="col">Codigo</th>
+              <th scope="col"></th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Categoria</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let i of hospitalLista">
+              <th scope="row">{{i.idHospital}}</th>
+              <td>{{i.nomeHospital}}</td>
+              <td>{{i.enderecoHospital}}</td>
+              <td>{{i.codigoHospital}}</td>
+              <td>{{i.tipoPessoa}}</td>                    
+              <td><a [href]="'https://api.whatsapp.com/send?phone='+i.telefoneHospital"
+                      target="_blank">{{i.telefoneHospital}}</a>
+              </td>
+              <td>{{i.categoria}}</td>
+          </tr>
+      </tbody>
+  </table>
 </div>
-
-
-<div class="form-group col-md-4">
-    <label for="inputState">Nome Hospital:</label>
-    <select id="inputState" class="form-control" [(ngModel)]='idHospital' (change)='findByNomeCategoria()'>
-        <option  value={{item.id}}>{{item.enderecoHospital}} Escolha    </option>
-        </select>
-
-</div>
-
-
-<div class="form-group col-md-4">
-    <label for="inputState">Especialidades:</label>
-    <select id="inputState" class="form-control" [(ngModel)]='nomeCategoria' (change)='findByNomeCategoria()'>
-        <option  value={{item.id}}>{{item.nomeCategoria}} Escolha </option>
-        </select>
-
-</div>
- 
-
-<div class="col-md-2 pl-0">
-    <button class="btn btn-outline-warning w-100" type="button" >Pesquisar</button>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="card mt-5 mb-3" *ngFor="let item of listaHospitais | orderBy: key : reverse">
-      <div class="card-header">
-        <div class="row d-flex align-items-center">
-          <div class="col-md-8">
-            <h5 class="card-title"> {{item.nomeHospital}} </h5>
-            <small>Tema: {{item.categoria.nomeCategoria}} </small>
-          </div>
-
-</form>
