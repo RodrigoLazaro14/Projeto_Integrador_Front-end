@@ -2,6 +2,7 @@ import {Injectable } from '@angular/core';
 import {HttpClient} from  '@angular/common/http';
 import { UserLogin } from '../model/UserLogin';
 import { User } from '../model/User';
+import { HospitalModel } from '../model/HospitalModel';
  
 @Injectable({
   providedIn: 'root'
@@ -16,13 +17,19 @@ export class AuthService {
     return this.http.post('http://localhost:8080/usuarios/logar', userLogin)
   }
   
-  cadastrar(user:User){
-    return this.http.post('http://localhost:8080/usuarios/cadastrar',user)
-  }
-  
   logarHospital(hospitalLogin: UserLogin) {
     return this.http.post('http://localhost:8080/hospitais/logar', hospitalLogin)
   }
+  
+  cadastrar(user:User){
+    return this.http.post('http://localhost:8080/usuarios/cadastrar',user)
+  }
+
+  cadastrarHospital(cadastroHospital: HospitalModel){
+    return this.http.post('http://localhost:8080/hospitais/cadastrar', cadastroHospital)
+  }
+  
+  
 
   btnSair() {
     let ok = false

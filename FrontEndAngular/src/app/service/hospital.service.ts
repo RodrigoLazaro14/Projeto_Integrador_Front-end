@@ -5,7 +5,7 @@ import { HospitalModel } from '../model/HospitalModel';
 @Injectable({
   providedIn: 'root'
 })
-export class TemaService {
+export class HospitalService {
 
   constructor(private http: HttpClient) { }
 
@@ -27,5 +27,8 @@ export class TemaService {
     return this.http.get(`http://localhost:8080/pesquisa-hospitais/nome/${nome}`, this.token)
   }
 
+  listar(){
+    return this.http.get<any>('http://localhost:8080/hospitais');
+  }
 
 }
