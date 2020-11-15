@@ -5,7 +5,7 @@ import { HospitalModel } from '../model/HospitalModel';
 @Injectable({
   providedIn: 'root'
 })
-export class TemaService {
+export class HospitalService {
 
   constructor(private http: HttpClient) { }
 

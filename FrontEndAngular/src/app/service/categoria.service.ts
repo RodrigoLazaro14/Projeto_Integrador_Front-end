@@ -6,7 +6,7 @@ import { CategoriaModel } from '../model/CategoriaModel';
 @Injectable({
   providedIn: 'root'
 })
-export class PostagemService {
+export class CategoriaService {
   constructor(private http: HttpClient) { }
   token = {
     headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
@@ -18,4 +18,11 @@ export class PostagemService {
     return this.http.get(`http://localhost:8080/pesquisa-hospitais/${id}`,this.token)
   }
  
+  postCategoria(categoria: CategoriaModel){
+    return this.http.post('http://localhost:8080/pespecialidades', categoria, this.token)
+  }
+
+  
+  
+  
 }

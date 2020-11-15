@@ -7,9 +7,9 @@ import { CategoriaService } from '../service/categoria.service';
 
  
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+  selector: 'app-pesquisa-hospitais',
+  templateUrl: './pesquisa-hospitais.component.html',
+  styleUrls: ['./pesquisa-hospitais.component.css']
 })
 export class FeedComponent implements OnInit {
   key = 'data'
