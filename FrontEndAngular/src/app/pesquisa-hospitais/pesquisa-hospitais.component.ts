@@ -15,6 +15,7 @@ export class PesquisaHospitaisComponent implements OnInit {
 
   hospitalLista = [];
   
+  idCategoria: number
   nomeCategoria: string
   categoria: CategoriaModel = new CategoriaModel()
   listaCategoria: CategoriaModel[]
@@ -78,11 +79,22 @@ export class PesquisaHospitaisComponent implements OnInit {
 
 findByNomeCategoria(){
 
-  this.hospitalService.getByNomeCategoria(this.nomeCategoria).subscribe((resp:HospitalModel)=>{
-    this.hospital=resp
+  this.categoriaService.getByNomeCategoria(this.nomeCategoria).subscribe((resp:CategoriaModel)=>{
+    this.categoria=resp
   
 })
 }
+
+
+
+findByIdCategoria(){
+  this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp:CategoriaModel)=>{
+    this.categoria=resp
+  })
+}
+
+
+
 
 
 }

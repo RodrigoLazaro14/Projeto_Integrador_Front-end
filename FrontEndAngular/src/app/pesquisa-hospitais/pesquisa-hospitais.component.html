@@ -1,16 +1,18 @@
-<div class="container-justify-content-center col-md-8 p-3 offset-md-3">
+<div class="container-justify-content-center col-md-8 p-3 offset-md-4">
   
-       <H5> Pesquise os Hospitais próximos a você:</H5>
-       <br>
+ 
 
 
         
-    <form>
-
+  <form>
         <!--regiao-->
-        <div class="form-group col-md-4">
-          <label for="inputState">Região:</label>
-          <select id="inputState" class="form-control" [(ngModel)]='enderecoHospital' (change)='findAllHospitais()'>
+
+        <div class="form-group col-md-7">
+        
+          <H3 class="mt-5  text-justify  text-monospace "> Pesquise hospitais próximos a você:</H3>
+       
+          <label for="inputState" class="text-monospace" class="mt-5">Região:</label>
+          <select id="inputState" class="form-control" [(ngModel)]='enderecoHospital' (change)='findByIdHospital()'>
             <option *ngFor='let item of listaHospitais' value={{item.idHospital}}>
                 {{item.enderecoHospital}}  </option>
           </select>
@@ -23,10 +25,10 @@
 
     <!--nomeHosp-->
 
-    <div class="form-group col-md-4">
-        <label for="inputState">Nome Hospital:</label>
-        <select id="inputState" class="form-control" [(ngModel)]='idHospital' (change)='findBynomeHospital()'>
-          <option *ngFor='let item of listaHospitais' value={{item.idHospital}}>{{item.enderecoHospital}}   </option>
+    <div class="form-group col-md-7">
+        <label for="inputState" class="text-monospace">Nome Hospital:</label>
+        <select id="inputState" class="form-control" [(ngModel)]='idHospital' (change)='findByIdHospital()'>
+          <option *ngFor='let item of listaHospitais' value={{item.idHospital}}>{{item.nomeHospital}}   </option>
         </select>
     
       </div>
@@ -38,10 +40,10 @@
        <!--Especialidades-->
 
 
-       <div class="form-group col-md-4">
-        <label for="inputState">Especialidades:</label>
-        <select id="inputState" class="form-control" [(ngModel)]='nomeCategoria' (change)='findAllCategorias()'>
-          <option *ngFor='let item of listaHospitais' value={{item.idCategoria}}>{{item.nomeCategoria}}   </option>
+       <div class="form-group col-md-7">
+        <label for="inputState" class="text-monospace">Especialidades:</label>
+        <select id="inputState" class="form-control" [(ngModel)]='nomeCategoria' (change)='findByIdCategoria()'>
+          <option *ngFor='let item of listaHospitais' value={{item.idCategoria}}>{{item.nomeCategoria}}</option>
         </select>
     
       </div>
@@ -50,10 +52,21 @@
 
 
       <!--pesquisar-->
-
-      <button class="btn btn-outline-info offset-md-3 ">
+      <div class="row mt- mb-5">
+        
+        <div class="col-md-1 pr-0">
+      <button class="btn btn-outline-info offset-md-2 mt-5 ">
         Pesquisar 
       </button>
+        </div>
+
+    </div>
+
 
     </form>
+
+ 
+
+
+       
 </div>
