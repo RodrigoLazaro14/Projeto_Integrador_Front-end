@@ -26,6 +26,4 @@ export class HospitalService {
   getByNomeHospital(nome: string) {
     return this.http.get(`http://localhost:8080/pesquisa-hospitais/nome/${nome}`, this.token)
   }
-
-
 }
