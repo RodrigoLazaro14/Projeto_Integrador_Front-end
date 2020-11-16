@@ -18,7 +18,8 @@ import { EspecialidadesComponent } from './especialidades/especialidades.compone
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
 import { EntrarComponent } from './entrar/entrar.component';
-//import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
+import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
+import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospit
     PerguntasFrequentesComponent,
     PoliticaPrivacidadeComponent,
     EntrarComponent,
-    //ListaHospitaisComponent,
+    ListaHospitaisComponent,
+    LoginHospitalComponent,
     PesquisaHospitaisComponent
   ],
   imports: [

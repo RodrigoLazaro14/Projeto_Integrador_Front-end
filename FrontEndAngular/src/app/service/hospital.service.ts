@@ -28,10 +28,11 @@ export class HospitalService {
   listar(){
     return this.http.get<any>('http://localhost:8080/hospitais');
   }
-  
+
   getByNomeCategoria(nome: string){
     return this.http.get('http://localhost:8080/pesquisa-hospitais', this.token)
   
   }
+
 
 }

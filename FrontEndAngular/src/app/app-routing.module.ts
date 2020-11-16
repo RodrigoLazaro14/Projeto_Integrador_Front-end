@@ -11,22 +11,23 @@ import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-f
 import { PoliticaPrivacidadeComponent } from './politica-privacidade/politica-privacidade.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
+import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 
-
 const routes: Routes = [
-  {path:'', redirectTo: 'home', pathMatch: 'full'},
-  {path:'home', component: HomeComponent},
-  {path:'sobrenos', component: SobrenosComponent},
-  {path:'logar', component:LoginComponent },
-  {path:'cadastrar', component:CadastroComponent },
-  {path:'cadastroHospital', component:CadastroHospitalComponent},
-  {path:'especialidades', component:EspecialidadesComponent},
-  {path:'perguntasFrequentes', component:PerguntasFrequentesComponent},
-  {path:'politicaPrivacidade', component:PoliticaPrivacidadeComponent},
-  {path: 'entrar', component: EntrarComponent},
-  {path: 'lista-hospitais', component: ListaHospitaisComponent},
-  {path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'sobrenos', component: SobrenosComponent },
+  { path: 'logar', component: LoginComponent },
+  { path: 'logar-hospital', component: LoginHospitalComponent },
+  { path: 'cadastrar', component: CadastroComponent },
+  { path: 'cadastroHospital', component: CadastroHospitalComponent },
+  { path: 'especialidades', component: EspecialidadesComponent },
+  { path: 'perguntasFrequentes', component: PerguntasFrequentesComponent },
+  { path: 'politicaPrivacidade', component: PoliticaPrivacidadeComponent },
+  { path: 'entrar', component: EntrarComponent },
+  { path: 'lista-hospitais', component: ListaHospitaisComponent },
+  { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent}
 
 ];
 
