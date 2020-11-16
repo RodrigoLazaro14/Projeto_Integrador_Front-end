@@ -3,25 +3,28 @@ import { HospitalModel } from '../model/HospitalModel';
 import { CategoriaModel } from '../model/CategoriaModel';
 import { HospitalService } from '../service/hospital.service';
 import { CategoriaService } from '../service/categoria.service';
- 
 
- 
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+   selector: 'app-pesquisa-hospitais',
+   templateUrl: './pesquisa-hospitais.component.html',
+   styleUrls: ['./pesquisa-hospitais.component.css']
 })
-export class FeedComponent implements OnInit {
+export class PesquisaHospitaisComponent implements OnInit {
   key = 'data'
   reverse = true
 
-
+  hospitalLista = [];
+  
+  nomeCategoria: string
   categoria: CategoriaModel = new CategoriaModel()
   listaCategoria: CategoriaModel[]
+   
   
   hospital: HospitalModel = new HospitalModel()
   listaHospitais: HospitalModel[]
   idHospital: number
+  nomeHospital: string
+  enderecoHospital: string
 
   constructor(
     private hospitalService: HospitalService,
@@ -29,25 +32,57 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    this.hospitalService.listar().subscribe(
+    resp => {
+    this.hospitalLista = resp;
     window.scroll(0,0)
     this.findAllHospitais()
     this.findAllCategorias()
+
+      })
+    
   }
    
-   
+
   findAllCategorias(){
     this.categoriaService.getAllCategorias().subscribe((resp:CategoriaModel[])=>{
       this.listaCategoria=resp
     })
   }
+
+
+
+
   findAllHospitais(){
     this.hospitalService.getAllHospitais().subscribe((resp:HospitalModel[])=>{
       this.listaHospitais=resp
     })
   }
-  findByIdTema(){
+
+
+
+  findByIdHospital(){
     this.hospitalService.getByIdHospital(this.idHospital).subscribe((resp:HospitalModel)=>{
       this.hospital=resp
     })
   }
+
+  findBynomeHospital(){
+
+    this.hospitalService.getByName(this.nomeHospital).subscribe((resp:HospitalModel)=>{
+      this.hospital=resp
+    
+  })
+}
+
+
+findByNomeCategoria(){
+
+  this.hospitalService.getByNomeCategoria(this.nomeCategoria).subscribe((resp:HospitalModel)=>{
+    this.hospital=resp
+  
+})
+}
+
+
 }
