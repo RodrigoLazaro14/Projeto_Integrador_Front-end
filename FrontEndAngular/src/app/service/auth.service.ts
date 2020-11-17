@@ -3,6 +3,7 @@ import {HttpClient} from  '@angular/common/http';
 import { UserLogin } from '../model/UserLogin';
 import { User } from '../model/User';
 import { HospitalModel } from '../model/HospitalModel';
+import { EspecialidadesComponent } from '../especialidades/especialidades.component';
  
 @Injectable({
   providedIn: 'root'
@@ -28,9 +29,8 @@ export class AuthService {
   cadastrarHospital(cadastroHospital: HospitalModel){
     return this.http.post('http://localhost:8080/hospitais/cadastrar', cadastroHospital)
   }
-  
-  
 
+  
   btnSair() {
     let ok = false
     let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
@@ -64,7 +64,7 @@ export class AuthService {
   juridica() {
     let ok = false
     let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
-    if(this.userLogin.tipoPessoa == 2 && tokenUsuarioLogin != null){
+    if(this.userLogin.tipoPessoa == 0 && tokenUsuarioLogin != null){
       ok = true
     } 
     return ok

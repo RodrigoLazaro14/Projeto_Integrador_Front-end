@@ -17,10 +17,12 @@ export class CategoriaService {
     return this.http.get(`http://localhost:8080/pesquisa-hospitais/${id}`,this.token)
   }
  
+  postCategoria(categoria: CategoriaModel){
+    return this.http.post('http://localhost:8080/especialidades', categoria, this.token)
+  }
   getByNomeCategoria(nome: string){
   return this.http.get('http://localhost:8080/pesquisa-hospitais', this.token)
 
-}
+  }
 
- 
 }
