@@ -5,6 +5,6 @@ export class CategoriaModel {
     public nomeCategoria: string
     public descricaoCategoria: string
     public precoCategoria: number
-    public hospital: HospitalModel
+    public hospital: HospitalModel[]
 
 }

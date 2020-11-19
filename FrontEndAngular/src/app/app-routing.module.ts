@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'entrar', component: EntrarComponent },
   { path: 'lista-hospitais', component: ListaHospitaisComponent },
   { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent}
+
 ];
 
 @NgModule({

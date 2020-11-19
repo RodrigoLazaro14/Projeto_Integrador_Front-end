@@ -21,7 +21,6 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
-  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -48,6 +47,7 @@ import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospit
     FontAwesomeModule,
     HttpClientModule,
     FormsModule
+    // ,PesquisaHospitaisComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

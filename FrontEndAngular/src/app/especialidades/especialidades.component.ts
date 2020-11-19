@@ -33,12 +33,12 @@ this.findAllCategoria()
   }
   publicarEspecialidades() {
     this.hospital.idHospital = this.idHospitais
-    this.categoria.hospital = this.hospital
+    this.hospital.categoria.push (this.categoria)
 
     if(this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null){
         alert('Preencha todos os campos antes de inserir!')
     } else{
-        this.categoriaService.postCategoria(this.categoria).subscribe((resp: CategoriaModel) => {
+        this.categoriaService.postCategoria(this.hospital).subscribe((resp: CategoriaModel) => {
     this.categoria = resp
     this.categoria = new CategoriaModel()
     alert('Especialidade inserida com sucesso!')

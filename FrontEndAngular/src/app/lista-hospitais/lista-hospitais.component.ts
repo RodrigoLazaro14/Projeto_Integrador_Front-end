@@ -22,4 +22,6 @@ export class ListaHospitaisComponent implements OnInit {
     )
   }
 
+  
+
 }
