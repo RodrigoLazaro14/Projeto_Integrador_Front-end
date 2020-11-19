@@ -31,21 +31,23 @@ export class EspecialidadesComponent implements OnInit {
 window.scroll(0,0)
 this.findAllCategoria()
   }
-  publicarEspecialidades() {
-    this.hospital.idHospital = this.idHospitais
-    this.hospital.categoria.push (this.categoria)
 
-    if(this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null){
-        alert('Preencha todos os campos antes de inserir!')
-    } else{
-        this.categoriaService.postCategoria(this.hospital).subscribe((resp: CategoriaModel) => {
-    this.categoria = resp
-    this.categoria = new CategoriaModel()
-    alert('Especialidade inserida com sucesso!')
-})
-    this.findAllCategoria()
+  publicarEspecialidades() {
+    this.hospital.idHospital = this.idHospitais;
+    this.hospital.categorias.push(this.categoria);
+
+    if (this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null) {
+      alert('Preencha todos os campos antes de inserir!')
+    } else {
+      this.categoriaService.postCategoria(this.hospital).subscribe((resp: CategoriaModel) => {
+        this.categoria = resp;
+        this.categoria = new CategoriaModel();
+        alert('Especialidade inserida com sucesso!');
+      })
+      this.findAllCategoria();
     }
-}
+  }
+
 
 findAllCategoria(){
   this.categoriaService.getAllCategorias().subscribe((resp: CategoriaModel[]) =>{

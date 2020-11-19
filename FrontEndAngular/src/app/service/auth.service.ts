@@ -64,7 +64,7 @@ export class AuthService {
   juridica() {
     let ok = false
     let tokenUsuarioLogin = localStorage.getItem('tokenUsuarioLogin')
-    if(this.userLogin.tipoPessoa == 0 && tokenUsuarioLogin != null){
+    if(this.userLogin.tipoPessoa == 2 && tokenUsuarioLogin != null){
       ok = true
     } 
     return ok
