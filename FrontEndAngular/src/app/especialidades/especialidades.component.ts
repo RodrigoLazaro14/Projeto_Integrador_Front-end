@@ -16,9 +16,9 @@ export class EspecialidadesComponent implements OnInit {
   listaCategoria: CategoriaModel[]
   titulo: string
 
-  newhosp: CategoriaModel = new CategoriaModel()
+  hospital: HospitalModel = new HospitalModel()
   listaHospital: HospitalModel[]
-  idHospital: number
+  idHospitais: number
   nomeHospital: string
 
   constructor(
@@ -28,18 +28,36 @@ export class EspecialidadesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+window.scroll(0,0)
+this.findAllCategoria()
   }
+
   publicarEspecialidades() {
-    this.newhosp.idCategoria = this.idHospital
-    this.categoria.idCategoria = this.idHospital
-    if(this.categoria.nomeCategoria == null || this.categoria.precoCategoria == null) {
-      alert('Preencha todos os campos!')
-    }else
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: CategoriaModel) => {
-      this.categoria = resp
-      this.categoria = new CategoriaModel()
-      alert('Especialidade cadastrada com sucesso!')
-    })
+    this.hospital.idHospital = this.idHospitais;
+    this.hospital.categorias.push(this.categoria);
+
+    if (this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null) {
+      alert('Preencha todos os campos antes de inserir!')
+    } else {
+      this.categoriaService.postCategoria(this.hospital).subscribe((resp: CategoriaModel) => {
+        this.categoria = resp;
+        this.categoria = new CategoriaModel();
+        alert('Especialidade inserida com sucesso!');
+      })
+      this.findAllCategoria();
     }
+  }
+
+
+findAllCategoria(){
+  this.categoriaService.getAllCategorias().subscribe((resp: CategoriaModel[]) =>{
+  this.listaCategoria = resp
+})
+}
+
+findByIdHospital(){
+  this.hospitalService.getByIdHospital2(this.idHospitais).subscribe((resp: HospitalModel) => {
+  this.hospital = resp
+})
+}
 }

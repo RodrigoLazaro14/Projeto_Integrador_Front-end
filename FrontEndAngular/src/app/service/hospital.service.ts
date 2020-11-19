@@ -20,8 +20,12 @@ export class HospitalService {
   getByIdHospital(id: number) {
     return this.http.get(`http://localhost:8080/pesquisa-hospitais/${id}`, this.token)
   }
+  getByIdHospital2(id: number) {
+    return this.http.get(`http://localhost:8080/hospitais/${id}`, this.token)
+  }
 
-  getByName(nome: string) {
+  getByNomeHospital(nome: string) {
+
     return this.http.get(`http://localhost:8080/pesquisa-hospitais/nome/${nome}`, this.token)
   }
 

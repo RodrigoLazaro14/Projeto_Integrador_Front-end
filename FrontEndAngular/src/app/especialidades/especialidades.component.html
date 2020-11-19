@@ -5,30 +5,26 @@
         <div class="col-md-8">
 
             <h3 class="text-center mb-4 text-monospace">Cadastre suas especialidades</h3>
-
-            <div class="form-group">
-                <label class="text-monospace" for="titulo">Especialidade</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o nome da especialidade" [(ngModel)]='categoria.nomeCategoria'>
+            <div class="row">
+                <div class="form-group">
+                    <label class="text-monospace" for="especialidade">Especialidade</label>
+                    <input type="text" class="form-control" id="especialidade" placeholder="Digite aqui o nome da especialidade" [(ngModel)]='categoria.nomeCategoria'>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label class="text-monospace" for="titulo">Valor</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o valor da consulta" [(ngModel)]='categoria.precoCategoria'>
+            <div class="row">
+                <div class="form-group">
+                    <label class="text-monospace" for="descricao">Descrição</label>
+                    <input type="text" class="form-control" id="descricao" placeholder="Digite aqui a descrição" [(ngModel)]='categoria.descricaoCategoria'>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="text-monospace" for="valor">Valor</label>
+                    <input type="text" class="form-control" id="valor" placeholder="Digite aqui o valor da consulta" [(ngModel)]='categoria.precoCategoria'>
+                </div>
             </div>
 
             <div class="row d-flex align-items-end">
-                <div class="col-md-8">
-                    <div class="form-group m-0">
-                        <label class="text-monospace" for="hospitalLista">Escolha o Hospital ou <a
-                            routerLink='/cadastroHospital'>Cadastre um novo</a></label>
-                        <select name="newhosp" id="newhosp" class="form-control" [(ngModel)]='idHospital'>
-                            <option *ngFor='let item of listaCategoria' value={{item.id}}>
-                                {{item.descricao}}
-                                Público / Privado
-                            </option>
-                        </select>
-                    </div>
-                </div>
 
                 <div class="col-md-4 d-flex justify-content-end">
                     <button type="button" class="btn btn-outline-info w-100" (click)='publicarEspecialidades()'> Publicar</button>
@@ -57,8 +53,23 @@
                         </div>
                     </div>
                 </div>
+                <table class="table table-hover">
+                    <thead>
+                        <th>ID Categoraia</th>
+                        <th>nome Categoria</th>
+                    </thead>
+                    <tbody>
 
+                        <tr *ngFor="let i of listaCategoria">
+                            <td>{{i.idCategoria}}</td>
+                            <td>{{i.nomeCategoria}}</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
             </div>
 
         </div>
     </div>
+</div>

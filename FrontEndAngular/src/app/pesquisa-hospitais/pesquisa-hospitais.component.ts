@@ -68,13 +68,13 @@ export class PesquisaHospitaisComponent implements OnInit {
     })
   }
 
-  findBynomeHospital(){
+ /* findBynomeHospital(){
 
     this.hospitalService.getByName(this.nomeHospital).subscribe((resp:HospitalModel)=>{
       this.hospital=resp
     
   })
-}
+}*/
 
 
 findByNomeCategoria(){
