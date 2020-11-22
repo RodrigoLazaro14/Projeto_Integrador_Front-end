@@ -4,6 +4,7 @@ import { CategoriaService } from '../service/categoria.service';
 import { CategoriaModel } from '../model/CategoriaModel';
 import { HospitalModel } from '../model/HospitalModel';
 import { Router } from '@angular/router';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-especialidades',
@@ -24,7 +25,8 @@ export class EspecialidadesComponent implements OnInit {
   constructor(
     private hospitalService: HospitalService,
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit() {
@@ -37,12 +39,12 @@ this.findAllCategoria()
     this.hospital.categorias.push(this.categoria);
 
     if (this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null) {
-      alert('Preencha todos os campos antes de inserir!')
+      this.alerta.showAlertDanger('Preencha todos os campos antes de inserir!')
     } else {
       this.categoriaService.postCategoria(this.hospital).subscribe((resp: CategoriaModel) => {
         this.categoria = resp;
         this.categoria = new CategoriaModel();
-        alert('Especialidade inserida com sucesso!');
+        this.alerta.showAlertSuccess('Especialidade inserida com sucesso!');
       })
       this.findAllCategoria();
     }

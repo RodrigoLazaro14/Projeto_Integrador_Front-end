@@ -12,6 +12,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadastroHospitalComponent } from './cadastro-hospital/cadastro-hospital.component';
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 import { DirecionamentoComponent } from './direcionamento/direcionamento.component';
 import { EspecialidadesComponent } from './especialidades/especialidades.component';
@@ -21,6 +22,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +41,16 @@ import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospit
     EntrarComponent,
     ListaHospitaisComponent,
     LoginHospitalComponent,
-    PesquisaHospitaisComponent
+    PesquisaHospitaisComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
     // ,PesquisaHospitaisComponent
   ],
   providers: [],
