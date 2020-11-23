@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 
     <div class="row">
 
@@ -8,26 +8,30 @@
             <div class="row">
                 <div class="form-group">
                     <label class="text-monospace" for="especialidade">Especialidade</label>
-                    <input type="text" class="form-control" id="especialidade" placeholder="Digite aqui o nome da especialidade" [(ngModel)]='categoria.nomeCategoria'>
+                    <input type="text" class="form-control" id="especialidade"
+                        placeholder="Digite aqui o nome da especialidade" [(ngModel)]='categoria.nomeCategoria'>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
                     <label class="text-monospace" for="descricao">Descrição</label>
-                    <input type="text" class="form-control" id="descricao" placeholder="Digite aqui a descrição" [(ngModel)]='categoria.descricaoCategoria'>
+                    <input type="text" class="form-control" id="descricao" placeholder="Digite aqui a descrição"
+                        [(ngModel)]='categoria.descricaoCategoria'>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
                     <label class="text-monospace" for="valor">Valor</label>
-                    <input type="text" class="form-control" id="valor" placeholder="Digite aqui o valor da consulta" [(ngModel)]='categoria.precoCategoria'>
+                    <input type="text" class="form-control" id="valor" placeholder="Digite aqui o valor da consulta"
+                        [(ngModel)]='categoria.precoCategoria'>
                 </div>
             </div>
 
             <div class="row d-flex align-items-end">
 
                 <div class="col-md-4 d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-info w-100" (click)='publicarEspecialidades()'> Publicar</button>
+                    <button type="button" class="btn btn-outline-info w-100" (click)='publicarEspecialidades()'>
+                        Publicar</button>
                 </div>
             </div>
 
@@ -36,17 +40,21 @@
             <nav class="d-flex justify-content-center">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-                    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#minhas-especialidades" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Especialidades</a>
+                    <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab"
+                        data-toggle="tab" href="#minhas-especialidades" role="tab" aria-controls="nav-home"
+                        aria-selected="true">Minhas Especialidades</a>
 
                 </div>
             </nav>
 
             <div class="tab-content" id="nav-tabContent">
 
-                <div class="tab-pane fade show active" id="minhas-especialidades" role="tabpanel" aria-labelledby="nav-postagens-tab">
+                <div class="tab-pane fade show active" id="minhas-especialidades" role="tabpanel"
+                    aria-labelledby="nav-postagens-tab">
                     <div class="row mt-3 mb-3">
                         <div class="col-md-10 pr-0">
-                            <input class="form-control w-100" type="search" placeholder="Pesquisar especialidade" aria-label="Pesquisar">
+                            <input class="form-control w-100" type="search" placeholder="Pesquisar especialidade"
+                                aria-label="Pesquisar">
                         </div>
                         <div class="col-md-2 pl-0">
                             <button class="btn btn-outline-warning w-100" type="button">Pesquisar</button>
@@ -56,13 +64,15 @@
                 <table class="table table-hover">
                     <thead>
                         <th>ID Categoraia</th>
-                        <th>nome Categoria</th>
+                        <th>Nome Categoria</th>
+                        <th>Preço Categoria</th>
                     </thead>
                     <tbody>
 
                         <tr *ngFor="let i of listaCategoria">
                             <td>{{i.idCategoria}}</td>
                             <td>{{i.nomeCategoria}}</td>
+                            <td>{{i.precoCategoria}}</td>
                         </tr>
 
                     </tbody>
@@ -72,4 +82,74 @@
 
         </div>
     </div>
-</div>
+</div> 
+-->
+
+<!-- CADASTRO CATEGORIA -->
+<div class="col-md-8">
+
+    <h3 class="text-center mb-4 text-monospace">Cadastre uma especialidade</h3>
+
+    <div class="form-group">
+        <label class="text-monospace" for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite aqui a especialidade"
+            [(ngModel)]='categoria.nomeCategoria'>
+    </div>
+
+    <div class="form-group">
+        <label class="text-monospace" for="descricao">Descrição:</label>
+        <input type="text" class="form-control" id="descricao" placeholder="Digite aqui a descrição"
+            [(ngModel)]='categoria.descricaoCategoria'>
+    </div>
+
+    <div class="form-group">
+        <label class="text-monospace" for="preco">Preço:</label>
+        <input type="number" class="form-control" id="preco" placeholder="Digite aqui o preço"
+            [(ngModel)]='categoria.precoCategoria'>
+    </div>
+
+    <div class="row d-flex align-items-end">
+
+        <div class="col-md-6">
+            <div class="form-group m-0">
+                <label class="text-monospace" for="hospital">Escolha um hospital ou <a routerLink='/cadastroHospital'>Cadastre
+                        um novo</a>
+                </label>
+                <select name="hospital" id='hospital' class="form-control" [(ngModel)]='idHospitais'
+                    (change)='findByIdHospital()'>
+                    <option *ngFor='let item of listaHospital' value={{item.idHospital}}>
+                        {{item.nomeHospital}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-info w-25" (click)='publicar()'>Publicar</button>
+        </div>
+
+    </div>
+    <!-- /CADASTRO CATEGORIA -->
+
+    <!-- GET ALL - JEITO DO ERSO -->
+    <div class="container-fluid col-md-8">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of listaCategoria">
+                    <th scope="row">{{i.idCategoria}}</th>
+                    <td>{{i.nomeCategoria}}</td>
+                    <td>{{i.precoCategoria}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>    
+<!-- /GET ALL - JEITO DO ERSO -->
