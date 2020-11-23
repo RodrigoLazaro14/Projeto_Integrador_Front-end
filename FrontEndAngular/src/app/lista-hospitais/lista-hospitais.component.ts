@@ -18,8 +18,7 @@ export class ListaHospitaisComponent implements OnInit {
     this.hospitalService.listar().subscribe(
       resp => {
         this.hospitalLista = resp;
-      }
-    )
+      })
   }
 
   
