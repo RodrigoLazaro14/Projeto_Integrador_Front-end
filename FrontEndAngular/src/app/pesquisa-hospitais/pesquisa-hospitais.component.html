@@ -1,72 +1,81 @@
-<div class="container-justify-content-center col-md-8 p-3 offset-md-4">
-  
- 
+<div class="container">
+  <!-- Se não for pesquisar especialidades aqui, pode tirar -->
+  <nav class="d-flex justify-content-center">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab"
+        href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
 
+      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
+        href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens por tema</a>
+    </div>
+  </nav>
+  <!-- /Se não for pesquisar especialidades aqui, pode tirar -->
 
-        
-  <form>
-        <!--regiao-->
+  <div class="tab-content" id="nav-tabContent">
 
-        <div class="form-group col-md-7">
-        
-          <H3 class="mt-5  text-justify  text-monospace "> Pesquise hospitais próximos a você:</H3>
-       
-          <label for="inputState" class="text-monospace" class="mt-5">Região:</label>
-          <select id="inputState" class="form-control" [(ngModel)]='enderecoHospital' (change)='findByIdHospital()'>
-            <option *ngFor='let item of listaHospitais' value={{item.idHospital}}>
-                {{item.enderecoHospital}}  </option>
-          </select>
-      
+    <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-postagens-tab">
+      <div class="row mt-3 mb-3">
+        <div class="col-md-10 pr-0">
+          <input class="form-control w-100" type="search"
+            placeholder="Pesquisar hospitais - OBS: Para visualizar a lista completa pesquise por ver todos"
+            aria-label="Pesquisar" [(ngModel)]='nomeHospital'>
         </div>
-  
-
-    <!--/regiao-->
-
-
-    <!--nomeHosp-->
-
-    <div class="form-group col-md-7">
-        <label for="inputState" class="text-monospace">Nome Hospital:</label>
-        <select id="inputState" class="form-control" [(ngModel)]='idHospital' (change)='findByIdHospital()'>
-          <option *ngFor='let item of listaHospitais' value={{item.idHospital}}>{{item.nomeHospital}}   </option>
-        </select>
-    
+        <div class="col-md-2 pl-0">
+          <button class="btn btn-outline-primary w-100" type="button" (click)='findByNomeHospital()'>Pesquisar</button>
+        </div>
       </div>
 
+      <div class="row mt-5 mb-5">
+        <div class="col-md-12">
+          <div class="card-deck mb-5 justify-content-center d-flex flex-wrap align-self-center">
+            <div class="card border-primary" style="width: 18rem;" *ngFor="let item of listaHospitais">
+              <div class="card-body">
+                <h5 class="card-title text-center">{{item.nomeHospital}}</h5>
+                <hr>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Endereço: </h6>
+                <p class="card-text text-center">{{item.enderecoHospital}}</p>
+                <hr>
+                <h6 class="mb-0 text-center text-muted">
+                  <p class="mb-0">Telefone: <a [href]="'https://api.whatsapp.com/send?phone=55'+item.telefoneHospital"
+                    target="_blank">{{item.telefoneHospital}}</a></p>
+                </h6>
 
-       <!--/nomeHosp-->
-
-
-       <!--Especialidades-->
-
-
-       <div class="form-group col-md-7">
-        <label for="inputState" class="text-monospace">Especialidades:</label>
-        <select id="inputState" class="form-control" [(ngModel)]='nomeCategoria' (change)='findByIdCategoria()'>
-          <option *ngFor='let item of listaHospitais' value={{item.idCategoria}}>{{item.nomeCategoria}}</option>
-        </select>
-    
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!--/especialidades-->
-
-
-      <!--pesquisar-->
-      <div class="row mt- mb-5">
-        
-        <div class="col-md-1 pr-0">
-      <button class="btn btn-outline-info offset-md-2 mt-5 ">
-        Pesquisar 
-      </button>
-        </div>
 
     </div>
+  </div>
 
-
-    </form>
-
- 
-
-
-       
 </div>
+
+<!-- GET All Hospitais
+
+<div class="container-fluid col-md-8">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id Hospital</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">Telefone</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of hospitalLista">
+        <th scope="row">{{i.idHospital}}</th>
+        <td>{{i.nomeHospital}}</td>
+        <td>{{i.enderecoHospital}}</td>
+        <td><a [href]="'https://api.whatsapp.com/send?phone=55'+i.telefoneHospital"
+            target="_blank">{{i.telefoneHospital}}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Get ALL Hospitais -->
