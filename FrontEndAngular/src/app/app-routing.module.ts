@@ -15,6 +15,7 @@ import { LoginHospitalComponent } from './login-hospital/login-hospital.componen
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

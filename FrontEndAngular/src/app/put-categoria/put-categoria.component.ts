@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaModel } from '../model/CategoriaModel';
 import { HospitalModel } from '../model/HospitalModel';
+import { AlertasService } from '../service/alertas.service';
 import { CategoriaService } from '../service/categoria.service';
 import { HospitalService } from '../service/hospital.service';
 
@@ -13,11 +14,13 @@ import { HospitalService } from '../service/hospital.service';
 export class PutCategoriaComponent implements OnInit {
 
   categoria: CategoriaModel = new CategoriaModel()
+
   idCate: number
 
   hospital: HospitalModel = new HospitalModel()
   listaHospital: HospitalModel[]
   idHospitais: number
+
 
   constructor(
     private hospitalService: HospitalService,
@@ -27,6 +30,7 @@ export class PutCategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.idCate = this.route.snapshot.params["id"]
     this.findByIdCategoria(this.idCate)
 
@@ -35,6 +39,7 @@ export class PutCategoriaComponent implements OnInit {
 
   findByIdCategoria(id: number){
     this.categoriaService.getByIdCategoria(id).subscribe((resp: CategoriaModel) => {
+
       this.categoria = resp
     })
   }
@@ -51,9 +56,11 @@ export class PutCategoriaComponent implements OnInit {
     }, err => {
       if(err.status == '500'){
         alert('Preencha todos os campos corretamente antes de salvar as alterações!')
+
       }
     })
   }
+
 
   findAllHospitais() {
     this.hospitalService.getAllHospitais().subscribe((resp: HospitalModel[]) => {
@@ -67,3 +74,4 @@ export class PutCategoriaComponent implements OnInit {
     })
   }
 }
+
