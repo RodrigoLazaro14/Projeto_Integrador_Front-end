@@ -23,7 +23,6 @@ import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.compo
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 import { AlertasComponent } from './alertas/alertas.component';
-import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 
 @NgModule({
@@ -45,7 +44,6 @@ import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
     LoginHospitalComponent,
     PesquisaHospitaisComponent,
     AlertasComponent,
-    DeleteCategoriaComponent,
     PutCategoriaComponent
   ],
   imports: [

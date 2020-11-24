@@ -65,14 +65,12 @@
                     <th scope="row">{{i.idCategoria}}</th>
                     <td>{{i.nomeCategoria}}</td>
                     <td>{{i.precoCategoria|currency:"BRL"}}</td>
-                    <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-categoria', i.idCategoria]">
-                        Apagar
-                    </button>
 
-<button class="btn btn-outline-info ml-3" [routerLink]="['/put-categoria', i.idCategoria]">
+                    <button class="btn btn-outline-info ml-3" [routerLink]="['/editar-categoria', i.idCategoria]">
                         Editar
                     </button>
-     
+
+
     </tr>
     </tbody>
     </table>

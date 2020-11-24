@@ -14,11 +14,13 @@ import { HospitalService } from '../service/hospital.service';
 export class PutCategoriaComponent implements OnInit {
 
   categoria: CategoriaModel = new CategoriaModel()
-  idCategoria: number
+
+  idCate: number
 
   hospital: HospitalModel = new HospitalModel()
-  listaHospitais: HospitalModel[]
-  idHospital: number
+  listaHospital: HospitalModel[]
+  idHospitais: number
+
 
   constructor(
     private hospitalService: HospitalService,
@@ -28,40 +30,48 @@ export class PutCategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.idCategoria = this.route.snapshot.params["id"]
-    this.findByIdCategoria(this.idCategoria)
+
+    this.idCate = this.route.snapshot.params["id"]
+    this.findByIdCategoria(this.idCate)
+
     this.findAllHospitais()
   }
 
-  findByIdCategoria(idCategoria: number) {
-    this.categoriaService.getByIdCategoria(idCategoria).subscribe((resp: CategoriaModel) => {
+  findByIdCategoria(id: number){
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: CategoriaModel) => {
+
       this.categoria = resp
     })
   }
 
-  salvar() {   
-    
 
-    this.categoriaService.putCategoria(this.categoria).subscribe((resp: CategoriaModel) => {
+  salvar(){
+    this.hospital.idHospital = this.idHospitais
+    this.categoria.hospital = this.hospital
+
+    this.categoriaService.putCatgoria(this.categoria).subscribe((resp: CategoriaModel) => {
       this.categoria = resp
-      this.router.navigate(['/home'])
-      alert('Categoria alterada com sucesso')
-    }, err => {  //Tratativa de erros.
+      this.router.navigate(['/especialidades'])
+      alert('Especialidade alterada com sucesso!')
+    }, err => {
       if(err.status == '500'){
-        alert('Preencha todos os campos corretamente, antes de enviar!')
+        alert('Preencha todos os campos corretamente antes de salvar as alterações!')
+
       }
     })
   }
 
-  findAllHospitais(){
-    this.hospitalService.getAllHospitais().subscribe((resp:HospitalModel[])=>{
-      this.listaHospitais=resp
+
+  findAllHospitais() {
+    this.hospitalService.getAllHospitais().subscribe((resp: HospitalModel[]) => {
+      this.listaHospital = resp
     })
   }
-  findByIdHospital(){
-    this.hospitalService.getByIdHospital(this.idHospital).subscribe((resp:HospitalModel)=>{
-      this.hospital=resp
+
+  findByIdHospital() {
+    this.hospitalService.getByIdHospital(this.idHospitais).subscribe((resp: HospitalModel) => {
+      this.hospital = resp;
     })
   }
-  
 }
+

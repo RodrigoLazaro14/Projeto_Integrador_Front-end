@@ -13,7 +13,6 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
-import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 
 
@@ -31,10 +30,8 @@ const routes: Routes = [
   { path: 'entrar', component: EntrarComponent },
   { path: 'lista-hospitais', component: ListaHospitaisComponent },
   { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent},
-  { path: 'delete-categoria/:id', component: DeleteCategoriaComponent},
-  { path: 'put-categoria/:idCategoria', component: PutCategoriaComponent}
-  
- 
+  { path: 'editar-categoria/:id', component: PutCategoriaComponent}
+
 ];
 
 @NgModule({
