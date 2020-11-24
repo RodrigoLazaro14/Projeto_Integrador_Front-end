@@ -14,12 +14,6 @@ export class HospitalService {
     headers: new HttpHeaders().set('Authorization', localStorage.getItem('token'))
 
   }
-
-  /*
-    getAllTemas() {
-    return this.http.get('https://blog-pessoal-generation.herokuapp.com/tema', this.token)
-  }
-  */
   
   getAllHospitais() {
     return this.http.get('http://localhost:8080/hospitais', this.token)

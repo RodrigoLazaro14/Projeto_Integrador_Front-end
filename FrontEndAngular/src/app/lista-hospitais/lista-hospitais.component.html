@@ -5,6 +5,7 @@
                 <th scope="col">Código Hospital</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
+                <th scope="col">Categorias</th>
             </tr>
         </thead>
         <tbody>
@@ -14,6 +15,17 @@
                 <td><a [href]="'https://api.whatsapp.com/send?phone=55'+i.telefoneHospital"
                         target="_blank">{{i.telefoneHospital}}</a>
                 </td>
+                <!--
+                <td *ngFor='let item of hospital.categoria'>
+                    {{item.nomeCategoria}}
+                </td>
+                -->
+                <td>
+                    <div *ngFor='let post of i.categoria'>
+                        {{post.nomeCategoria}}
+                    </div>
+                </td>
+
             </tr>
         </tbody>
     </table>

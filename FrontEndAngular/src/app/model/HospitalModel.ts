@@ -9,5 +9,5 @@ export class HospitalModel {
     public telefoneHospital: string
     public loginHospital: string
     public senhaHospital: string
-    public categorias: CategoriaModel[] = [];
+    public categoria: CategoriaModel[]
 }

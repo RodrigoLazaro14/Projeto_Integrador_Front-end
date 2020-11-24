@@ -5,6 +5,7 @@ import { CategoriaModel } from '../model/CategoriaModel';
 import { HospitalModel } from '../model/HospitalModel';
 import { Router } from '@angular/router';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-especialidades',
@@ -22,6 +23,9 @@ export class EspecialidadesComponent implements OnInit {
   listaHospital: HospitalModel[]
   idHospitais: number
   nomeHospital: string
+  //hospitalNome: string
+  
+
 
   constructor(
     private hospitalService: HospitalService,
@@ -43,7 +47,8 @@ export class EspecialidadesComponent implements OnInit {
 
   publicar() {
     this.hospital.idHospital = this.idHospitais;
-     this.categoria.hospital = this.hospital; 
+    this.categoria.hospital = this.hospital; 
+
 
     if (this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null || this.categoria.hospital == null) {
       this.alerta.showAlertDanger('Preencha todos os campos antes de inserir!')
@@ -54,13 +59,14 @@ export class EspecialidadesComponent implements OnInit {
         this.categoria = resp;
         this.categoria = new CategoriaModel();
         this.alerta.showAlertSuccess('Especialidade inserida com sucesso!');
-         this.findAllCategoria()
+        this.findAllCategoria()
+
       })
 
     }
   }
 
- 
+
   findAllCategoria() {
     this.categoriaService.getAllCategorias().subscribe((resp: CategoriaModel[]) => {
       this.listaCategoria = resp
@@ -78,4 +84,5 @@ export class EspecialidadesComponent implements OnInit {
       this.hospital = resp;
     })
   }
+
 }

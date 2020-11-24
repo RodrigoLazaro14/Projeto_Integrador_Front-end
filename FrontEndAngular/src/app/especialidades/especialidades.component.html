@@ -8,16 +8,17 @@
             <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome" placeholder="Digite aqui a especialidade"
                 [(ngModel)]='categoria.nomeCategoria'>
-        </div>
 
+        </div>
+    
         <div class="form-group">
             <label for="descricao">Descrição:</label>
             <input type="text" class="form-control" id="descricao" placeholder="Digite aqui a descrição"
                 [(ngModel)]='categoria.descricaoCategoria'>
         </div>
-
+    
         <div class="form-group">
-            <label for="preco" >Preço: </label>
+            <label for="preco">Preço:</label>
             <input type="number" class="form-control" id="preco" placeholder="Digite aqui o preço"
                 [(ngModel)]='categoria.precoCategoria'>
         </div>
@@ -38,13 +39,14 @@
                     </select>
                 </div>
             </div>
-
+    
             <div class="col-md-6 d-flex justify-content-end">
                 <button type="button" class="btn btn-outline-info w-25" (click)='publicar()'>Publicar</button>
             </div>
-
+    
         </div>
     </div>
+
 
     <!-- /CADASTRO CATEGORIA -->
 
