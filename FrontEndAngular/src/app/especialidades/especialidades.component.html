@@ -8,6 +8,7 @@
             <label for="nome">Nome:</label>
             <input type="text" class="form-control" id="nome" placeholder="Digite aqui a especialidade"
                 [(ngModel)]='categoria.nomeCategoria'>
+
         </div>
     
         <div class="form-group">
@@ -46,6 +47,7 @@
         </div>
     </div>
 
+
     <!-- /CADASTRO CATEGORIA -->
 
     <!-- GET ALL - JEITO DO ERSO -->
@@ -59,14 +61,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let i of listaCategoria">
+                <tr *ngFor="let i of listaCategoria">   
                     <th scope="row">{{i.idCategoria}}</th>
                     <td>{{i.nomeCategoria}}</td>
-                    <td>{{i.precoCategoria}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <td>{{i.precoCategoria|currency:"BRL"}}</td>
+                    <button class="btn btn-outline-danger ml-3" [routerLink]="['/delete-categoria', i.idCategoria]">
+                        Apagar
+                    </button>
 
-</div>    
+                    <button class="btn btn-outline-info ml-3" [routerLink]="['/put-categoria', i.idCategoria]">
+                        Editar
+                    </button>
+     
+    </tr>
+    </tbody>
+    </table>
+</div>
+
+</div>
 <!-- /GET ALL - JEITO DO ERSO -->
