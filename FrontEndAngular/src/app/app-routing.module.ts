@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'lista-hospitais', component: ListaHospitaisComponent },
   { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent},
   { path: 'delete-categoria/:id', component: DeleteCategoriaComponent},
-  { path: 'put-categoria/:id', component: PutCategoriaComponent}
+  { path: 'put-categoria/:idCategoria', component: PutCategoriaComponent}
   
  
 ];

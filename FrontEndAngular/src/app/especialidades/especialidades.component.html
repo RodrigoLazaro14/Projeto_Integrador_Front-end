@@ -33,7 +33,7 @@
                     <label for="hospital">Escolha um hospital:</label>
                     <select name="hospital" id='hospital' class="form-control" [(ngModel)]='idHospitais'
                         (change)='findByIdHospital()'>
-                        <option *ngFor='let item of listaHospital' value={{item.idHospital}}>
+                        <option *ngFor='let item of listaHospital' value={{item.idHospitais}}>
                             {{item.nomeHospital}}
                         </option>
                     </select>
@@ -69,7 +69,7 @@
                         Apagar
                     </button>
 
-                    <button class="btn btn-outline-info ml-3" [routerLink]="['/put-categoria', i.idCategoria]">
+<button class="btn btn-outline-info ml-3" [routerLink]="['/put-categoria', i.idCategoria]">
                         Editar
                     </button>
      
