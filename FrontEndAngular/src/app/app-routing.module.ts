@@ -13,6 +13,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.component';
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
+import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'politicaPrivacidade', component: PoliticaPrivacidadeComponent },
   { path: 'entrar', component: EntrarComponent },
   { path: 'lista-hospitais', component: ListaHospitaisComponent },
-  { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent}
+  { path: 'pesquisa-hospitais', component: PesquisaHospitaisComponent},
+  { path: 'editar-categoria/:id', component: PutCategoriaComponent}
 
 ];
 

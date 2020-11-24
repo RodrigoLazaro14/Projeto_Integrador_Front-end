@@ -23,6 +23,7 @@ import { ListaHospitaisComponent } from './lista-hospitais/lista-hospitais.compo
 import { LoginHospitalComponent } from './login-hospital/login-hospital.component';
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     ListaHospitaisComponent,
     LoginHospitalComponent,
     PesquisaHospitaisComponent,
-    AlertasComponent
+    AlertasComponent,
+    PutCategoriaComponent
   ],
   imports: [
     BrowserModule,

@@ -18,12 +18,14 @@ export class EspecialidadesComponent implements OnInit {
   listaCategoria: CategoriaModel[]
   titulo: string
 
+  hospitalLista = [];
   hospital: HospitalModel = new HospitalModel()
   listaHospital: HospitalModel[]
+  listaHospitais: HospitalModel[]
   idHospitais: number
   nomeHospital: string
   //hospitalNome: string
-  
+
 
 
   constructor(
@@ -46,11 +48,11 @@ export class EspecialidadesComponent implements OnInit {
 
   publicar() {
     this.hospital.idHospital = this.idHospitais;
-    this.categoria.hospital = this.hospital; 
+    this.categoria.hospital = this.hospital;
 
     if (this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null || this.categoria.hospital == null) {
       this.alerta.showAlertDanger('Preencha todos os campos antes de inserir!')
-    }else if (this.categoria.descricaoCategoria.length < 10) {
+    } else if (this.categoria.descricaoCategoria.length < 10) {
       this.alerta.showAlertDanger('Digite no minimo 10 caracteres no campo texto!')
     } else {
       this.categoriaService.postCategoria(this.categoria).subscribe((resp: CategoriaModel) => {
@@ -69,7 +71,7 @@ export class EspecialidadesComponent implements OnInit {
     })
   }
 
-  findAllHospitais(){
+  findAllHospitais() {
     this.hospitalService.getAllHospitais().subscribe((resp: HospitalModel[]) => {
       this.listaHospital = resp
     })
@@ -78,6 +80,13 @@ export class EspecialidadesComponent implements OnInit {
   findByIdHospital() {
     this.hospitalService.getByIdHospital(this.idHospitais).subscribe((resp: HospitalModel) => {
       this.hospital = resp;
+    })
+  }
+
+  findByNomeHospital() {
+
+    this.hospitalService.getByNomeHospital(this.nomeHospital).subscribe((resp: HospitalModel[]) => {
+      this.listaHospitais = resp
     })
   }
 

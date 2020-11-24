@@ -20,8 +20,8 @@ export class CategoriaService {
     return this.http.get<any>('http://localhost:8080/categoria');
   }
 
-  getByIdCategoria(idCategoria: number){
-    return this.http.get(`http://localhost:8080/categoria/${idCategoria}`,this.token)
+  getByIdCategoria(id: number){
+    return this.http.get(`http://localhost:8080/categoria/${id}`,this.token)
   }
 
   postCategoria(categoria: CategoriaModel){
@@ -31,6 +31,10 @@ export class CategoriaService {
   getByNomeCategoria(nome: string){
   return this.http.get('http://localhost:8080/pesquisa-hospitais', this.token)
 
+  }
+
+  putCatgoria(categoria: CategoriaModel){
+    return this.http.put('http://localhost:8080/categoria', categoria, this.token)
   }
 
 }
