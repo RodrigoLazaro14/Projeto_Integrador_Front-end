@@ -10,9 +10,7 @@ import { CategoriaService } from '../service/categoria.service';
   styleUrls: ['./pesquisa-hospitais.component.css']
 })
 export class PesquisaHospitaisComponent implements OnInit {
-  key = 'data'
-  reverse = true
-
+  
   hospitalLista = [];
 
   idCategoria: number
