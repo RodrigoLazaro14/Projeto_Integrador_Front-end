@@ -1,9 +1,10 @@
+
 import { AlertasService } from './../service/alertas.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { CategoriaModel } from './../model/CategoriaModel';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CategoriaModel } from '../model/CategoriaModel';
 import { CategoriaService } from '../service/categoria.service';
-import { HospitalModel } from '../model/HospitalModel';
+
 
 @Component({
   selector: 'app-delete-categoria',
@@ -15,31 +16,30 @@ export class DeleteCategoriaComponent implements OnInit {
 
   categoria: CategoriaModel = new CategoriaModel()
 
-
   constructor(
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute,
-    private alerta: AlertasService
-     
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
+    
     let id: number = this.route.snapshot.params['id']
     this.findByIdCategoria(id)
   }
 
-  findByIdCategoria(id:number){
+  findByIdCategoria(id: number){
     this.categoriaService.getByIdCategoria(id).subscribe((resp: CategoriaModel) => {
-      this.categoria=resp
+      this.categoria = resp
     })
   }
-
-  btnSim() {
+  
+  btnSim(){
     this.categoriaService.deleteCategoria(this.categoria.idCategoria).subscribe(() => {
       this.router.navigate(['/especialidades'])
-      this.alerta.showAlertSuccess('Especialidade apagada com sucesso!')
+      alert('Especialidade apagada com sucesso!')
+
     })
   }
 
@@ -48,8 +48,3 @@ export class DeleteCategoriaComponent implements OnInit {
   }
 
 }
-
-
-
-
-
