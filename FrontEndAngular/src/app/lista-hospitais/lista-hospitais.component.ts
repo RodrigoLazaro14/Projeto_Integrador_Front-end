@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriaModel } from '../model/CategoriaModel';
+import { HospitalModel } from '../model/HospitalModel';
+import { CategoriaService } from '../service/categoria.service';
 import { HospitalService } from '../service/hospital.service';
 
 @Component({
@@ -9,9 +12,13 @@ import { HospitalService } from '../service/hospital.service';
 export class ListaHospitaisComponent implements OnInit {
 
   hospitalLista = [];
+  listaCategoria: CategoriaModel[]
+  hospital: HospitalModel = new HospitalModel()
+
 
   constructor(
-    public hospitalService: HospitalService
+    public hospitalService: HospitalService,
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit() {
@@ -19,8 +26,16 @@ export class ListaHospitaisComponent implements OnInit {
       resp => {
         this.hospitalLista = resp;
       })
+
+
+      this.findAllCategorias()
   }
 
-  
+
+  findAllCategorias() {
+    this.categoriaService.getAllCategorias().subscribe((resp: CategoriaModel[]) => {
+      this.listaCategoria = resp
+    })
+  }
 
 }
