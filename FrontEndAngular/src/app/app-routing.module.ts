@@ -16,6 +16,7 @@ import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospit
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
 import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

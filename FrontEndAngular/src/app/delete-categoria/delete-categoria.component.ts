@@ -1,13 +1,17 @@
+
+import { AlertasService } from './../service/alertas.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaModel } from '../model/CategoriaModel';
 import { CategoriaService } from '../service/categoria.service';
+
 
 @Component({
   selector: 'app-delete-categoria',
   templateUrl: './delete-categoria.component.html',
   styleUrls: ['./delete-categoria.component.css']
 })
+
 export class DeleteCategoriaComponent implements OnInit {
 
   categoria: CategoriaModel = new CategoriaModel()
@@ -35,6 +39,7 @@ export class DeleteCategoriaComponent implements OnInit {
     this.categoriaService.deleteCategoria(this.categoria.idCategoria).subscribe(() => {
       this.router.navigate(['/especialidades'])
       alert('Especialidade apagada com sucesso!')
+
     })
   }
 

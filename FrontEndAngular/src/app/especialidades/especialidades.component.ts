@@ -17,6 +17,7 @@ export class EspecialidadesComponent implements OnInit {
   categoria: CategoriaModel = new CategoriaModel()
   listaCategoria: CategoriaModel[]
   titulo: string
+  idCategoria:number
 
   hospitalLista = [];
   hospital: HospitalModel = new HospitalModel()
@@ -50,6 +51,7 @@ export class EspecialidadesComponent implements OnInit {
     this.hospital.idHospital = this.idHospitais;
     this.categoria.hospital = this.hospital;
 
+
     if (this.categoria.nomeCategoria == null || this.categoria.descricaoCategoria == null || this.categoria.precoCategoria == null || this.categoria.hospital == null) {
       this.alerta.showAlertDanger('Preencha todos os campos antes de inserir!')
     } else if (this.categoria.descricaoCategoria.length < 10) {
@@ -60,10 +62,12 @@ export class EspecialidadesComponent implements OnInit {
         this.categoria = new CategoriaModel();
         this.alerta.showAlertSuccess('Especialidade inserida com sucesso!');
         this.findAllCategoria()
+
       })
 
     }
   }
+
 
   findAllCategoria() {
     this.categoriaService.getAllCategorias().subscribe((resp: CategoriaModel[]) => {
