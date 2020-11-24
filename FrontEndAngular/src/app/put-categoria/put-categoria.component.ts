@@ -27,6 +27,8 @@ export class PutCategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0)
+    
     this.idCate = this.route.snapshot.params["id"]
     this.findByIdCategoria(this.idCate)
 

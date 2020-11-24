@@ -24,6 +24,7 @@ import { LoginHospitalComponent } from './login-hospital/login-hospital.componen
 import { PesquisaHospitaisComponent } from './pesquisa-hospitais/pesquisa-hospitais.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
+import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PutCategoriaComponent } from './put-categoria/put-categoria.component';
     LoginHospitalComponent,
     PesquisaHospitaisComponent,
     AlertasComponent,
-    PutCategoriaComponent
+    PutCategoriaComponent,
+    DeleteCategoriaComponent
   ],
   imports: [
     BrowserModule,
